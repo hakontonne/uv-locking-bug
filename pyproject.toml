@@ -1,0 +1,21 @@
+[project]
+name = "uv-bug-app"
+version = "0.1.0"
+description = "Minimal uv workspace to reproduce --locked error with workspaces"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11.7",
+]
+
+[tool.uv.workspace]
+# Define a tiny workspace with a single member package
+members = [
+    "packages/examplelib",
+]
+
+
+[tool.uv.sources]
+# Point the dependency to the workspace member, like in your main project
+examplelib = { workspace = true }
+
+

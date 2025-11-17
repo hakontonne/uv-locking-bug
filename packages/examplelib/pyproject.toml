@@ -1,0 +1,17 @@
+[project]
+name = "examplelib"
+version = "0.1.0"
+description = "Example library to reproduce uv --locked workspace bug"
+requires-python = ">=3.12"
+readme = "README.md"
+
+dependencies = [
+   "logfire>=4.3.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
